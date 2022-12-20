@@ -7,7 +7,7 @@
     background: none;
 }
 body{
-    background-color: #E5E5E5;
+    background-color: #f3f5fc;
 }
 main{
     height: 100vh;
@@ -22,24 +22,25 @@ section{
     width: 70%;
 }
 .salida{
-    width: 400px;
-    max-width: 400px;
+    width: 30%;
     background-color: #FFFFFF;
     border-radius: 32px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    padding: 50px;
+    padding: 5%;
+    box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
 }
 .salida img{
-    width: 250px;
-    height: 230px;
+    width: 100%;
     margin-bottom: 10px;
 }
-.salida div{
+.salida > div{
     display: flex;
     flex-direction: column;
+    width: 100%;
+    align-items: center;
 }
 .salida div p.esconder:nth-child(1){
     font-size: 24px;
@@ -56,7 +57,7 @@ section{
     text-align: center;
 }
 button{
-    width: 290px;
+    width: 45%;
     height: 67px;
     border: 1px solid #0A3871;
     border-radius: 24px;
@@ -69,12 +70,13 @@ button{
 }
 .entrada > img{
     position: absolute;
+    margin-left: 15px;
 }
 .entrada > div{
     height: 100%;
     display: flex;
     flex-direction: column;
-    margin-left: 150px;
+    margin-left: 15%;
     padding: 120px 0 36px 0;
     justify-content: space-between;
 }
@@ -86,6 +88,7 @@ button{
     font-size: 32px;
     line-height: 150%;
     color: #0A3871;
+    resize: none;
 }
 .entrada > div textarea::placeholder { color: #0A3871; }
 
@@ -93,6 +96,7 @@ button{
     color: #FFFFFF;
     background-color: #0A3871;
 }
+
 .entrada > div > div > p{
     color: #495057;
     opacity: 0.8;
@@ -105,7 +109,7 @@ button{
     margin-right: 9px;
 }
 .entrada > div > div > button{
-    margin: 0 20px 10px 20px;;
+    margin: 0 1.5% 10px 1.5%;;
 }
 .contenedorResultado{
     width: 100%;
@@ -118,7 +122,58 @@ button{
     line-height: 150%;
     color: #495057;
 }
+#btn-Copiar{
+    width: 120%;
+}
 .hide{
     display: none;
 }
 
+@media (max-width: 1000px) {
+    .salida img{
+        width: 140%;
+    }
+    .salida div p.esconder:nth-child(1){
+        font-size: 22px;
+    }
+    .salida div p.esconder:nth-child(2){
+        font-size: 15px;
+    }
+  }
+
+@media (max-width: 770px) {
+    main{
+        flex-direction: column;
+        justify-content: flex-end;
+    }
+    main .entrada, .salida{
+        width: 100%;
+    }
+    section{
+        height: auto;
+    }
+    .entrada > div{
+        margin-left: 0;
+        padding-bottom: 10px;
+    }
+    .salida img{
+        display: none;
+    }
+    #btn-Copiar{
+        width: 100%;
+    }
+  }
+
+  @media (max-width: 400px) {
+    main{
+        padding: 17px;
+        justify-content: start;
+    }
+    .entrada >div > div{
+        display: flex;
+        flex-direction: column;
+    }
+    .entrada >div > div button{
+        width: 100%;
+    }
+  }

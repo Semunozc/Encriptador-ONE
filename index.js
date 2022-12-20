@@ -35,7 +35,7 @@ window.addEventListener("load", ()=>{
                     break;
             }
         });
-        console.log(textoEncriptado);
+        
         return textoEncriptado;
     }
 
@@ -52,6 +52,22 @@ window.addEventListener("load", ()=>{
         return textoDesencriptado;
     }
 
+    function actualizarPantalla(texto){
+
+        if(texto == ""){
+            esconder.forEach(elemento =>{
+                elemento.classList.remove("hide");
+            });
+            btnCopiar.classList.add("hide");
+        }else{
+            esconder.forEach(elemento =>{
+                elemento.classList.add("hide");
+            });
+            btnCopiar.classList.remove("hide");
+        }
+
+    }
+
     const entrada = document.querySelector("#textoEntrada");
     const btnEncriptar = document.querySelector("#btn-Encriptar");
     const btnDesencriptar = document.querySelector("#btn-Desencriptar");
@@ -64,16 +80,20 @@ window.addEventListener("load", ()=>{
         resultado.innerHTML = textoEncriptado;
         entrada.value = "";
 
-        if(textoEncriptado == ""){
-            esconder.forEach(elemento =>{
-                elemento.classList.remove("hide");
-            });
-            btnCopiar.classList.add("hide");
-        }else{
-            esconder.forEach(elemento =>{
-                elemento.classList.add("hide");
-            });
-            btnCopiar.classList.remove("hide");
-        }
+        actualizarPantalla(textoEncriptado);
     });
+
+    btnDesencriptar.addEventListener("click",()=>{
+        let textoDesencriptado = desencriptar(entrada.value);
+        resultado.innerHTML = textoDesencriptado;
+        entrada.value = "";
+
+        actualizarPantalla(textoDesencriptado);
+    });
+
+    btnCopiar.addEventListener("click",()=>{
+        navigator.clipboard.writeText(resultado.innerHTML);
+    });
+    
+    
 });
