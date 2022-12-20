@@ -13,15 +13,17 @@ main{
     height: 100vh;
     display: flex;
     padding: 40px;
+    justify-content: space-between;
 }
 section{
     height: 100%;
 }
 .entrada{
-    width: 100%;
+    width: 70%;
 }
 .salida{
-    min-width: 400px;
+    width: 400px;
+    max-width: 400px;
     background-color: #FFFFFF;
     border-radius: 32px;
     display: flex;
@@ -39,14 +41,14 @@ section{
     display: flex;
     flex-direction: column;
 }
-.salida div p:first-child{
+.salida div p.esconder:nth-child(1){
     font-size: 24px;
     font-weight: 700;
     color: #343A40;
     line-height: 120%;
     text-align: center;
 }
-.salida div p:nth-child(2){
+.salida div p.esconder:nth-child(2){
     font-weight: 400;
     font-size: 16px;
     line-height: 150%;
@@ -63,20 +65,20 @@ button{
 }
 .salida div button{
     color: #0A3871;
+    margin-top: 15px;
 }
 .entrada > img{
     position: absolute;
 }
 .entrada > div{
+    height: 100%;
     display: flex;
     flex-direction: column;
     margin-left: 150px;
     padding: 120px 0 36px 0;
-    height: 100%;
     justify-content: space-between;
 }
 .entrada >div textarea{
-    width: 660px;
     border: none;
     outline: none;
     height: 200px;
@@ -104,5 +106,19 @@ button{
 }
 .entrada > div > div > button{
     margin: 0 20px 10px 20px;;
+}
+.contenedorResultado{
+    width: 100%;
+    word-wrap: break-word;
+    overflow: auto;
+}
+#resultado{
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 150%;
+    color: #495057;
+}
+.hide{
+    display: none;
 }
 

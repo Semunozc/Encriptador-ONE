@@ -13,25 +13,25 @@
         <section class="entrada">
             <img src="images/Vector.png" alt="logo alura">
             <div>
-                <textarea placeholder="ingrese el texto aqui"></textarea>
+                <textarea id="textoEntrada" placeholder="ingrese el texto aqui"></textarea>
                 <div>
                     <p><img src="images/advertencia.png" alt="anvertencia">Solo letras minusculas y sin acentos</p>
-                    <button type="button" class="btn-encriptar">Encriptar</button>
-                    <button type="button" >Desencriptar</button>
+                    <button id="btn-Encriptar" class="btn-encriptar">Encriptar</button>
+                    <button id="btn-Desencriptar" type="button" >Desencriptar</button>
                 </div>
             </div>
         </section>
         <section class="salida">
-            <div>
-                <p></p>
+            <div class="contenedorResultado">
+                <p id="resultado"></p>
             </div>
-            <img src="images/Muñeco.png" alt="sin mensaje">
+            <img class="esconder" src="images/Muñeco.png" alt="sin mensaje">
             <div>
-                <p>Ningun Mensaje fue encontrado</p>
-                <p>Ingresa el texto que desees encriptar o desencriptar.</p>
+                <p class="esconder">Ningun Mensaje fue encontrado</p>
+                <p class="esconder">Ingresa el texto que desees encriptar o desencriptar.</p>
             </div>
             <div>
-                <button type="button">Copiar</button>
+                <button id="btn-Copiar" class="hide" type="button">Copiar</button>
             </div>
         </section>
     </main>

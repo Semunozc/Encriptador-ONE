@@ -7,7 +7,7 @@ window.addEventListener("load", ()=>{
         }
         return txt;
     }
-    
+
     function encriptar(texto){
 
         texto = texto.split("");
@@ -35,7 +35,7 @@ window.addEventListener("load", ()=>{
                     break;
             }
         });
-
+        console.log(textoEncriptado);
         return textoEncriptado;
     }
 
@@ -52,5 +52,28 @@ window.addEventListener("load", ()=>{
         return textoDesencriptado;
     }
 
+    const entrada = document.querySelector("#textoEntrada");
+    const btnEncriptar = document.querySelector("#btn-Encriptar");
+    const btnDesencriptar = document.querySelector("#btn-Desencriptar");
+    const btnCopiar = document.querySelector("#btn-Copiar");
+    const esconder = document.querySelectorAll(".esconder");
+    const resultado = document.querySelector("#resultado");
 
+    btnEncriptar.addEventListener("click",()=>{
+        let textoEncriptado = encriptar(entrada.value);
+        resultado.innerHTML = textoEncriptado;
+        entrada.value = "";
+
+        if(textoEncriptado == ""){
+            esconder.forEach(elemento =>{
+                elemento.classList.remove("hide");
+            });
+            btnCopiar.classList.add("hide");
+        }else{
+            esconder.forEach(elemento =>{
+                elemento.classList.add("hide");
+            });
+            btnCopiar.classList.remove("hide");
+        }
+    });
 });
